@@ -1,0 +1,114 @@
+/* Dark Mode */
+.converter-container {
+  background-image: url(../../images/3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 200px 0px;
+}
+.converter-wrapper {
+  /* border: 1px solid red; */
+  width: 500px;
+  margin: auto;
+  padding: 70px 40px;
+  background: #28373e;
+  color: white;
+  border-radius: 10px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.from-amount-container {
+  margin-bottom: 20px;
+}
+
+.from-amount {
+  background: #1f2a2f;
+  border-right: none;
+  padding: 10px 130px 10px 20px;
+  border-color: #fff;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-width: 2px;
+}
+
+.from-amount-select {
+  background: #1f2a2f;
+  border-left: none;
+  padding: 10px 20px;
+  border-color: #fff;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: #fff;
+  font-size: 15.5px;
+  /* font-weight: 600; */
+  border-width: 2px;
+}
+
+.to-amount-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 350px;
+  margin: auto;
+}
+
+.to-amount {
+  background: #1f2a2f;
+  border-right: none;
+  padding: 10px 130px 10px 20px;
+  border-color: #fff;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.to-amount-select {
+  background: #1f2a2f;
+  border-left: none;
+  padding: 10px 20px;
+  border-color: #fff;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: #fff;
+  font-size: 15.5px;
+  /* font-weight: 600; */
+  border-width: 2px;
+}
+
+.rate {
+  background-color: #fff;
+  padding: 1px 45px;
+  margin-top: 40px;
+  color: #010508;
+  text-align: left;
+  font-size: 18px;
+}
+
+.divider {
+  color: #fff;
+
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  background: #fff;
+  color: #010508;
+}
+
+/* Light Mode */
