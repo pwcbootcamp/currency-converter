@@ -200,7 +200,7 @@ select:focus {
   text-align: right;
   letter-spacing: 1px;
   }
-=======
+
 
 @media screen and (max-width: 480px) {
   .converter-container {
@@ -278,4 +278,5 @@ select:focus {
     border-width: 2px;
     text-align: right;
     letter-spacing: 1px;
+}
 }
