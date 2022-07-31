@@ -125,6 +125,82 @@ select:focus {
 }
 
 /* Light Mode */
+ 
+.light-converter-container {
+  background-image: url(../../images/light-mode.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 100px 0px;
+}
+
+.light-converter-wrapper {
+  /* border: 1px solid red; */
+  width: 500px;
+  margin: auto;
+  padding: 70px 40px;
+  background: #9aa6b4;
+  color: #15262e;
+  border-radius: 10px;
+}
+
+.light-from-amount-select {
+  background: #fff;
+  border: none;
+  border-color: #fff;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: #15262e;
+  font-size: 15.5px;
+  /* font-weight: 600; */
+  border-width: 2px;
+  text-align: right;
+  padding: 10px 10px 10px 0px;
+  width: 187px;
+  letter-spacing: 1px;
+}
+
+.light-from-amount {
+  background: #fff;
+  border: none;
+  padding: 10px 0px 10px 20px;
+  border-color: #fff;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  color: #1f2a2f;
+  font-size: 16px;
+  font-weight: 600;
+  border-width: 2px;
+}
+
+.light-to-amount {
+  background: #fff;
+  border: none;
+  padding: 10px 0px 10px 20px;
+  border-color: #fff;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  color: #1f2a2f;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.light-to-amount-select {
+  background: #fff;
+  border: none;
+  padding: 10px 10px 10px 0px;
+  width: 187px;
+  border-color: #fff;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: #1f2a2f;
+  font-size: 15.5px;
+  /* font-weight: 600; */
+  border-width: 2px;
+  text-align: right;
+  letter-spacing: 1px;
+  }
+=======
 
 @media screen and (max-width: 480px) {
   .converter-container {
@@ -202,5 +278,4 @@ select:focus {
     border-width: 2px;
     text-align: right;
     letter-spacing: 1px;
-  }
 }
