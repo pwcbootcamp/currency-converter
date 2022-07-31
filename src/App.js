@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import image from './Currency.png';
 import './App.css';
 
-//<img src={`https://flagcdn.com/48x36/${((e[0]).slice(0,2)).toLowerCase()}.png`} alt="flag" />
 function App() {
   const [currencies, setCurrencies] = useState([]);
   const [currency, setCurrency] = useState('');
@@ -65,7 +64,7 @@ function App() {
                 setResult(null);
               }}
               value={amount}
-              type="text"
+              type="number"
             />
           </div>
           <div className="drop-list">
