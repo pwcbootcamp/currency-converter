@@ -3,6 +3,7 @@ import { FaToggleOn } from "react-icons/fa";
 //import { FaToggleOff } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { setFromCurrrency, setToCurrrency } from "./converterSlice";
+import Options from "./Options";
 
 const Converter = () => {
   const fromCurrency = useSelector((state) => state.converter.fromCurrency);
@@ -68,11 +69,7 @@ const Converter = () => {
                 dispatch(setFromCurrrency(e.target.value));
               }}
             >
-              <option value="NGN">NGN</option>
-              <option value="GBP">GBP</option>
-              <option value="EUR">EUR</option>
-              <option value="INR">INR</option>
-              <option value="USD">USD</option>
+              <Options />
             </select>
           </div>
           <div className="to-amount-container">
@@ -96,11 +93,7 @@ const Converter = () => {
                 dispatch(setToCurrrency(e.target.value));
               }}
             >
-              <option value="USD">USD</option>
-              <option value="GBP">GBP</option>
-              <option value="EUR">EUR</option>
-              <option value="INR">INR</option>
-              <option value="USD">USD</option>
+              <Options />
             </select>
           </div>
           <div className="rate">
