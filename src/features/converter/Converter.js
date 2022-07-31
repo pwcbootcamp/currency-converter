@@ -88,6 +88,7 @@ const Converter = () => {
               className="to-amount-select"
               id="currency"
               name="currency"
+              defaultValue={"default"}
               onChange={(e) => {
                 e.preventDefault();
                 dispatch(setToCurrrency(e.target.value));

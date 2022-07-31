@@ -1,10 +1,10 @@
 /* Dark Mode */
 .converter-container {
-  background-image: url(../../images/3.jpg);
+  background-image: url(../../images/dark-mode.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  padding: 200px 0px;
+  padding: 100px 0px;
 }
 .converter-wrapper {
   /* border: 1px solid red; */
@@ -22,12 +22,13 @@
 }
 .from-amount-container {
   margin-bottom: 20px;
+  display: flex;
 }
 
 .from-amount {
   background: #1f2a2f;
   border-right: none;
-  padding: 10px 130px 10px 20px;
+  padding: 10px 0px 10px 20px;
   border-color: #fff;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
@@ -40,7 +41,7 @@
 .from-amount-select {
   background: #1f2a2f;
   border-left: none;
-  padding: 10px 20px;
+
   border-color: #fff;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -48,6 +49,10 @@
   font-size: 15.5px;
   /* font-weight: 600; */
   border-width: 2px;
+  text-align: right;
+  padding: 10px 10px 10px 0px;
+  width: 187px;
+  letter-spacing: 1px;
 }
 
 .to-amount-container {
@@ -60,7 +65,7 @@
 .to-amount {
   background: #1f2a2f;
   border-right: none;
-  padding: 10px 130px 10px 20px;
+  padding: 10px 0px 10px 20px;
   border-color: #fff;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
@@ -72,7 +77,8 @@
 .to-amount-select {
   background: #1f2a2f;
   border-left: none;
-  padding: 10px 20px;
+  padding: 10px 10px 10px 0px;
+  width: 187px;
   border-color: #fff;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -80,11 +86,14 @@
   font-size: 15.5px;
   /* font-weight: 600; */
   border-width: 2px;
+  text-align: right;
+
+  letter-spacing: 1px;
 }
 
 .rate {
   background-color: #fff;
-  padding: 1px 45px;
+  padding: 20px 45px;
   margin-top: 40px;
   color: #010508;
   text-align: left;
@@ -93,7 +102,7 @@
 
 .divider {
   color: #fff;
-
+  background-color: #fff;
   margin-top: 20px;
   margin-bottom: 60px;
 }
@@ -109,6 +118,10 @@ input:focus {
   outline: none;
   background: #fff;
   color: #010508;
+}
+
+select:focus {
+  outline: none;
 }
 
 /* Light Mode */

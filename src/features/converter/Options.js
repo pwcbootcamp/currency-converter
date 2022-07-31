@@ -159,7 +159,7 @@ const Options = () => {
       <option value="UAH">Ukrainian Hryvnia</option>
       <option value="AED">United Arab Emirates Dirham</option>
       <option value="UYU">Uruguayan Peso</option>
-      <option value="USD">US Dollar</option>
+      <option value={"default"}>United States Dollar</option>
       <option value="UZS">Uzbekistan Som</option>
       <option value="VUV">Vanuatu Vatu</option>
       <option value="VEF">Venezuelan BolÃ­var</option>
