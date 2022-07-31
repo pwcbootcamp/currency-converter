@@ -125,7 +125,7 @@ select:focus {
 }
 
 /* Light Mode */
- 
+
 .light-converter-container {
   background-image: url(../../images/light-mode.jpg);
   background-repeat: no-repeat;
@@ -151,7 +151,7 @@ select:focus {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   color: #15262e;
-  font-size: 15.5px;
+  font-size: 13.5px;
   /* font-weight: 600; */
   border-width: 2px;
   text-align: right;
@@ -194,12 +194,14 @@ select:focus {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   color: #1f2a2f;
-  font-size: 15.5px;
+  font-size: 13.5px;
   /* font-weight: 600; */
   border-width: 2px;
   text-align: right;
   letter-spacing: 1px;
-  }
+
+}
+  
 
 
 @media screen and (max-width: 480px) {
@@ -277,10 +279,10 @@ select:focus {
     /* font-weight: 600; */
     border-width: 2px;
     text-align: right;
-    letter-spacing: 1px;
-}
-/*  light-mode  */
-   .light-converter-container {
+    letter-spacing: 0px;
+  }
+  /* light mode */
+  .light-converter-container {
     padding: 200px 0;
   }
   .light-converter-wrapper {
@@ -355,3 +357,4 @@ select:focus {
     width: 90px;
   }
 }
+
