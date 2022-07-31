@@ -1,25 +1,27 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useEffect, useState } from "react";
+import image from "./Currency.png";
+import "./App.css";
+
 //<img src={`https://flagcdn.com/48x36/${((e[0]).slice(0,2)).toLowerCase()}.png`} alt="flag" />
 function App() {
   const [currencies, setCurrencies] = useState([]);
-  const [currency, setCurrency] = useState('');
+  const [currency, setCurrency] = useState("");
   const [result, setResult] = useState(null);
   const [amount, setAmount] = useState(0);
 
   useEffect(() => {
     (async () => {
       const myHeaders = new Headers();
-      myHeaders.append('apikey', 'LhILWJUh6vvu3Me8m9tPonAUpV459IXu');
+      myHeaders.append("apikey", "LhILWJUh6vvu3Me8m9tPonAUpV459IXu");
 
       const requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
+        method: "GET",
+        redirect: "follow",
         headers: myHeaders,
       };
       try {
         const fetchCurrency = await fetch(
-          'https://api.apilayer.com/exchangerates_data/symbols',
+          "https://api.apilayer.com/exchangerates_data/symbols",
           requestOptions
         );
         const formattedCurrencies = await fetchCurrency.json();
@@ -27,6 +29,9 @@ function App() {
           setCurrencies(Object.entries(formattedCurrencies.symbols));
         }
       } catch (error) {
+        <div className="alert alert-danger" role="alert">
+          {error.message}
+        </div>;
         console.log(error.message);
       }
     })();
@@ -34,11 +39,11 @@ function App() {
   const convert = async (e) => {
     e.preventDefault();
     const myHeaders = new Headers();
-    myHeaders.append('apikey', 'LhILWJUh6vvu3Me8m9tPonAUpV459IXu');
+    myHeaders.append("apikey", "Eo7or8gbdv9TwhVW07dK1mwXZeJfNdWm");
 
     const requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
+      method: "GET",
+      redirect: "follow",
       headers: myHeaders,
     };
     try {
@@ -54,8 +59,17 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="wrapper">
+    <div className="App row">
+      <div
+        className="col-xl-7 col-lg-4 col-md-4 
+      col-sm-10 col-xs-4"
+      >
+        <img src={image} alt="" className="img" />
+      </div>
+      <div
+        className="wrapper container-fluid col-xl-5 
+      col-lg-8 col-md-8 col-sm-10 col-xs-4"
+      >
         <header>Currency Converter</header>
         <form action="#" onSubmit={(e) => convert(e)}>
           <div className="amount">
@@ -100,7 +114,10 @@ function App() {
           </div>
           <div className="exchange-rate">Getting exchange rate...</div>
           <button>Get Exchange Rate</button>
-          {result ? `${amount} ${currency} = ${result} NGN` : ``}
+
+          <div className="alert alert-success" role="alert">
+            {result ? `${amount} ${currency} = ${result} NGN` : ``}
+          </div>
         </form>
       </div>
     </div>
