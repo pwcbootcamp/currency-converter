@@ -1,28 +1,20 @@
-import { useEffect, useState } from "react";
-import image from "./Currency.png";
-import "./App.css";
+import { useEffect, useState } from 'react';
+import image from './Currency.png';
+import './App.css';
 
 //<img src={`https://flagcdn.com/48x36/${((e[0]).slice(0,2)).toLowerCase()}.png`} alt="flag" />
 function App() {
   const [currencies, setCurrencies] = useState([]);
-  const [currency, setCurrency] = useState("");
+  const [currency, setCurrency] = useState('');
   const [result, setResult] = useState(null);
   const [amount, setAmount] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const myHeaders = new Headers();
-      myHeaders.append("apikey", "LhILWJUh6vvu3Me8m9tPonAUpV459IXu");
-
-      const requestOptions = {
-        method: "GET",
-        redirect: "follow",
-        headers: myHeaders,
-      };
       try {
         const fetchCurrency = await fetch(
-          "https://api.apilayer.com/exchangerates_data/symbols",
-          requestOptions
+          'https://api.exchangerate.host/symbols'
         );
         const formattedCurrencies = await fetchCurrency.json();
         if (currencies.length === 0) {
@@ -38,19 +30,12 @@ function App() {
   }, [currencies]);
   const convert = async (e) => {
     e.preventDefault();
-    const myHeaders = new Headers();
-    myHeaders.append("apikey", "Eo7or8gbdv9TwhVW07dK1mwXZeJfNdWm");
-
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-      headers: myHeaders,
-    };
+    setLoading(true);
     try {
       const convertFetch = await fetch(
-        `https://api.apilayer.com/exchangerates_data/convert?to=NGN&from=${currency}&amount=${amount}`,
-        requestOptions
+        `https://api.exchangerate.host/convert?to=NGN&from=${currency}&amount=${amount}`
       );
+      setLoading(false);
       const result = await convertFetch.json();
       setResult(result.result);
     } catch (error) {
@@ -71,7 +56,7 @@ function App() {
       col-lg-8 col-md-8 col-sm-10 col-xs-4"
       >
         <header>Currency Converter</header>
-        <form action="#" onSubmit={(e) => convert(e)}>
+        <form onSubmit={(e) => convert(e)}>
           <div className="amount">
             <p>Enter Amount</p>
             <input
@@ -107,13 +92,23 @@ function App() {
             <div className="to">
               <p>To</p>
               <div className="select-box">
-                <img src="https://flagcdn.com/48x36/ng.png" alt="flag" />
-                <select> </select>
+                NGN
+                {/* <select> </select> */}
               </div>
             </div>
           </div>
-          <div className="exchange-rate">Getting exchange rate...</div>
-          <button>Get Exchange Rate</button>
+          {loading ? (
+            <div className="exchange-rate">Getting exchange rate...</div>
+          ) : (
+            ''
+          )}
+          <button style={{ marginTop: !loading ? '5vmin' : 0 }}>
+            {!loading ? (
+              'Get Exchange Rate'
+            ) : (
+              <div className="spinner-border" role="status" />
+            )}
+          </button>
 
           <div className="alert alert-success" role="alert">
             {result ? `${amount} ${currency} = ${result} NGN` : ``}
