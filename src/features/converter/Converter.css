@@ -279,4 +279,79 @@ select:focus {
     text-align: right;
     letter-spacing: 1px;
 }
+/*  light-mode  */
+   .light-converter-container {
+    padding: 200px 0;
+  }
+  .light-converter-wrapper {
+    width: 300px;
+  }
+  .header-container h2 {
+    font-size: 18px;
+  }
+  .light-to-amount-container {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin: auto;
+  }
+
+  .light-to-amount {
+    background: #fff;
+    border: none;
+    padding: 10px 0px 10px 20px;
+    border-color: #fff;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    color: #1f2a2f;
+    font-size: 16px;
+    font-weight: 600;
+    width: 90px;
+  }
+
+  .light-to-amount-select {
+    background: #fff;
+    border: none;
+    padding: 10px 10px 10px 0px;
+    width: 146px;
+    border-color: #fff;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: #1f2a2f;
+    font-size: 12px;
+    /* font-weight: 600; */
+    border-width: 2px;
+    text-align: right;
+    letter-spacing: 0px;
+  }
+
+  .light-from-amount-select {
+    background: #fff;
+    border: none;
+    border-color: #fff;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: #15262e;
+    font-size: 12px;
+    /* font-weight: 600; */
+    border-width: 2px;
+    text-align: right;
+    padding: 10px 10px 10px 0px;
+    width: 136px;
+    letter-spacing: 0px;
+  }
+
+  .light-from-amount {
+    background: #fff;
+    border: none;
+    padding: 10px 0px 10px 20px;
+    border-color: #fff;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    color: #1f2a2f;
+    font-size: 16px;
+    font-weight: 600;
+    border-width: 2px;
+    width: 90px;
+  }
 }
