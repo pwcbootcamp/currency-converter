@@ -109,9 +109,9 @@ function App() {
             )}
           </button>
 
-          <div className="alert alert-success" role="alert">
-            {result ? `${amount} ${currency} = ${result} NGN` : ``}
-          </div>
+          {result ? <div className="alert alert-success" role="alert">
+            {`${amount} ${currency} = ${result} NGN`}
+          </div>: ''}
         </form>
       </div>
     </div>
