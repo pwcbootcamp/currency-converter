@@ -25,6 +25,7 @@ const Converter = () => {
       const rateData = await data.conversion_rate;
       console.log(await rateData, await data);
       setRate(await rateData);
+      setToAmount(fromAmount * (await rateData));
     } catch (e) {
       console.log(e.message);
     }
@@ -62,9 +63,12 @@ const Converter = () => {
               className="from-amount-select"
               id="currency"
               name="currency"
-              onChange={(e) => dispatch(setFromCurrrency(e.target.value))}
+              onChange={(e) => {
+                e.preventDefault();
+                dispatch(setFromCurrrency(e.target.value));
+              }}
             >
-              <option>-- USD --</option>
+              <option value="NGN">NGN</option>
               <option value="GBP">GBP</option>
               <option value="EUR">EUR</option>
               <option value="INR">INR</option>
@@ -80,15 +84,19 @@ const Converter = () => {
               onChange={(e) => {
                 setToAmount(e.target.value);
                 setFromAmount(Number(e.target.value) / rate);
+                console.log(toAmount);
               }}
             />
             <select
               className="to-amount-select"
               id="currency"
               name="currency"
-              onChange={(e) => dispatch(setToCurrrency(e.target.value))}
+              onChange={(e) => {
+                e.preventDefault();
+                dispatch(setToCurrrency(e.target.value));
+              }}
             >
-              <option>-- EUR --</option>
+              <option value="USD">USD</option>
               <option value="GBP">GBP</option>
               <option value="EUR">EUR</option>
               <option value="INR">INR</option>
