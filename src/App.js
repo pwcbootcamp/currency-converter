@@ -3,10 +3,12 @@ import image from './Currency.png';
 import './App.css';
 
 function App() {
+  // const [currencies, setFromCurrencies] = useState([]);
   const [currencies, setCurrencies] = useState([]);
   const [currency, setCurrency] = useState('');
+  const [toCurrency, setToCurrency] = useState('');
   const [result, setResult] = useState(null);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -27,12 +29,14 @@ function App() {
       }
     })();
   }, [currencies]);
+  // console.log(currencies.indexOf(['AED', {description: 'United Arab Emirates Dirham', code: 'AED'}]));
+
   const convert = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       const convertFetch = await fetch(
-        `https://api.exchangerate.host/convert?to=NGN&from=${currency}&amount=${amount}`
+        `https://api.exchangerate.host/convert?to=${toCurrency}&from=${currency}&amount=${amount}`
       );
       setLoading(false);
       const result = await convertFetch.json();
@@ -65,6 +69,8 @@ function App() {
               }}
               value={amount}
               type="number"
+              required
+              min="1"
             />
           </div>
           <div className="drop-list">
@@ -77,6 +83,7 @@ function App() {
                     setResult(null);
                   }}
                 >
+                  <option></option>
                   {currencies.map((e) => (
                     <option key={e[0]} value={e[0]}>
                       {e[0]}
@@ -91,17 +98,32 @@ function App() {
             <div className="to">
               <p>To</p>
               <div className="select-box">
-                NGN
-                {/* <select> </select> */}
+                <select
+                  onChange={(e) => {
+                    setToCurrency(e.target.value);
+                    setResult(null);
+                  }}
+                >
+                  <option></option>
+                  {currencies.map((e, index) => (
+                    <option key={index} value={e[0]}>
+                      {e[0]}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>
-          {loading ? (
+          {loading && (
             <div className="exchange-rate">Getting exchange rate...</div>
-          ) : (
-            ''
           )}
-          <button style={{ marginTop: !loading ? '5vmin' : 0 }}>
+          <button
+            style={{
+              marginTop: !loading ? '5vmin' : 0,
+              opacity: (!currency || !toCurrency) && '0.5',
+            }}
+            disabled={!currency || !toCurrency}
+          >
             {!loading ? (
               'Get Exchange Rate'
             ) : (
@@ -109,9 +131,11 @@ function App() {
             )}
           </button>
 
-          {result ? <div className="alert alert-success" role="alert">
-            {`${amount} ${currency} = ${result} NGN`}
-          </div>: ''}
+          {result && (
+            <div className="alert alert-success" role="alert">
+              {`${amount} ${currency} = ${result} ${toCurrency}`}
+            </div>
+          )}
         </form>
       </div>
     </div>
