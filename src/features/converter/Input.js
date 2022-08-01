@@ -21,6 +21,7 @@ const Input = () => {
       <input
         type="text"
         value={input}
+        placeholder="Enter a number"
         onChange={(e) => setInputValue(e.target.value)}
       />
     </>
