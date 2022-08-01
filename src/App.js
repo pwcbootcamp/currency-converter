@@ -3,7 +3,6 @@ import image from './Currency.png';
 import './App.css';
 
 function App() {
-  // const [currencies, setFromCurrencies] = useState([]);
   const [currencies, setCurrencies] = useState([]);
   const [currency, setCurrency] = useState('');
   const [toCurrency, setToCurrency] = useState('');
@@ -29,7 +28,6 @@ function App() {
       }
     })();
   }, [currencies]);
-  // console.log(currencies.indexOf(['AED', {description: 'United Arab Emirates Dirham', code: 'AED'}]));
 
   const convert = async (e) => {
     e.preventDefault();
