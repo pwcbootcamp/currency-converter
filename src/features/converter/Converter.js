@@ -49,13 +49,14 @@ const Converter = () => {
           }
         );
       }
+
+      // if the response is not empty set the state 'currencyRates' to the response object
+      if (res.data.rates) {
+        dispatch(setCurrencyRates(res.data.rates));
+      }
     } catch (err) {
       console.log(err);
     }
-
-    // console.log(res.data.base);
-    // console.log(res.data.rates);
-    dispatch(setCurrencyRates(res.data.rates));
   };
 
   // function to convert the curreency

@@ -22,7 +22,12 @@ const CurrencySelector = ({ type }) => {
   return (
     <>
       {type === "to" ? (
-        <select name={type} id={type} value={to}>
+        <select
+          name={type}
+          id={type}
+          defaultValue={to}
+          onChange={(e) => setCurrencyPosition(e.target.value)}
+        >
           <option value={to}>{to}</option>
         </select>
       ) : (
@@ -30,7 +35,7 @@ const CurrencySelector = ({ type }) => {
           name={type}
           id={type}
           onChange={(e) => setCurrencyPosition(e.target.value)}
-          value={from}
+          defaultValue={from}
         >
           <option value={from}>{from}</option>
           {currencyAliases

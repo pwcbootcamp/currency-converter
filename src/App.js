@@ -1,6 +1,4 @@
-// import logo from "./logo.svg";
 import "./App.css";
-// import Converter from "./components/Converter";
 import Converter from "./features/converter/Converter";
 
 function App() {
