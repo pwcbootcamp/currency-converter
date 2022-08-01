@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
+import ReactLoading from "react-loading"
 
 const Converter = () => {
     const [exchange, setExchange] = useState("")
     const [currency, setCurrency] = useState([])
     const [from, setFrom] = useState("")
     const [to, setTo] = useState("")
-    const [amount, setAmount] = useState("")
+    const [amount, setAmount] = useState(0)
+    const [loading, setLoading] = useState(false)
 
 
     const fetchExchange = async () => {
@@ -16,14 +18,16 @@ const Converter = () => {
     }
 
     const convertCurrency = async () => {
+        setLoading(true)
         const res = await fetch(`https://api.exchangerate.host/convert?from=${from}&to=${to}`)
         const data = await res.json()
         setExchange(data.result.toFixed(2))
+        setLoading(false)
     }
 
     useEffect(() => {
         fetchExchange();
-    }, [exchange])
+    }, [])
 
     const result = Object.keys(currency).map(function (key) {
         return { name: currency[key].code, desc: currency[key].description };
@@ -40,7 +44,7 @@ const Converter = () => {
 
                 <div className='pe-3'>
                     <p>Amount</p>
-                    <input placeholder='enter amount' className='form-control form-control-lg bg-dark text-white border-warning' type="text" value={amount} onChange={(e) => setAmount(Number(e.target.value))} />
+                    <input placeholder='enter amount' className='form-control form-control-lg bg-dark text-white border-warning' type="number" min="0" value={amount} onChange={(e) => setAmount(Number(e.target.value))} />
                 </div>
 
 
@@ -71,8 +75,11 @@ const Converter = () => {
             </div>
 
             <div className='d-flex justify-content-center mt-5'>
-                <button disabled={amount==0} className='btn btn-lg btn-warning px-4' onClick={convertCurrency}> Convert </button>
+                <button disabled={amount===0} className='btn btn-lg btn-block btn-warning' style={{width: "180px"}} onClick={convertCurrency}>  
+                {loading &&  <ReactLoading type="spin" color="black" height={0} width={30}/>}
+                 Convert </button>
             </div>
+           
         </div>
     )
 }
