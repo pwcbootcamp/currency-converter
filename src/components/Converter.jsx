@@ -19,12 +19,11 @@ const Converter = () => {
         const res = await fetch(`https://api.exchangerate.host/convert?from=${from}&to=${to}`)
         const data = await res.json()
         setExchange(data.result.toFixed(2))
-        console.log(exchange)
     }
 
     useEffect(() => {
         fetchExchange();
-    }, [])
+    }, [exchange])
 
     const result = Object.keys(currency).map(function (key) {
         return { name: currency[key].code, desc: currency[key].description };
@@ -72,7 +71,7 @@ const Converter = () => {
             </div>
 
             <div className='d-flex justify-content-center mt-5'>
-                <button className='btn btn-lg btn-warning px-4' onClick={convertCurrency}> Convert </button>
+                <button disabled={amount==0} className='btn btn-lg btn-warning px-4' onClick={convertCurrency}> Convert </button>
             </div>
         </div>
     )
