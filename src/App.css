@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+  /* background-color: rgb(240, 235, 235); */
+}
+
+.container {
+  position: relative;
+  background: linear-gradient(60deg, #2e3192, #02aabd);
+  /* background-color: #2e3192; */
+  width: 100%;
+  height: 40vh;
+}
+
+.container > h3 {
+  width: 100%;
+  background: linear-gradient(to right, #2e3192, #02aabd);
+  color: #fff;
+  padding: 20px 20px;
+  box-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.4);
+}
+
+.converterForm {
+  position: absolute;
+  bottom: -40%;
+  left: 20%;
+  /* transform: translate(50%, 50%); */
+  /* background-color: #f1f1f1; */
+  box-shadow: 0 5px 8px 4px rgba(0, 0, 0, 0.4);
+  /* border: 1px solid #02aabd; */
+  width: 50%;
+  height: 90%;
+  border-radius: 14px;
+  padding: 20px 30px;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  border-radius: 6px;
+  padding: 10px 5px;
+  border: 1px solid black;
+  /* border: none;
+  outline: none; */
+}
+
+.row1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.dateField {
+  float: right;
+  margin: 10px 0 0 0;
+}
+
+.alt-icon {
+  color: #fff;
+  background-color: #02aabd;
+  border-radius: 100%;
+  font-size: 30px;
+}
+.error {
+  color: crimson;
+}
