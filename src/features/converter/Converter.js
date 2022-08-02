@@ -11,6 +11,7 @@ import {
   setInput,
   setResult,
   setToValue,
+  setError,
 } from "./converterSlice";
 
 const Converter = () => {
