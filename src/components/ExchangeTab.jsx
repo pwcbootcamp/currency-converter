@@ -27,7 +27,7 @@ function ExchangeTab() {
       .then((result) => {
         console.log(result);
         setRates(result.rates[`${baseCurrency}`]);
-        setXrates(rates * source);
+        setXrates(Number(rates) * parseInt(source.replace(/,/g, "")));
         setTimeline(result.timestamp);
         console.log(source);
         console.log(rates);
@@ -41,8 +41,10 @@ function ExchangeTab() {
         Currency Converter <img className="App-logo" src={logo} alt="logo" />
       </h3>
       <p className="timeline">
-        {`//Timestamp`}:Time-{new Date(timeline).getHours()}:
-        {new Date(timeline).getMinutes()}:{new Date(timeline).getSeconds()}
+        {`//Timestamp`}:Time-
+        {new Date(timeline * 1000).getHours().toString().padStart(2, "0")}:
+        {new Date(timeline * 1000).getMinutes().toString().padStart(2, "0")}:
+        {new Date(timeline * 1000).getSeconds().toString().padStart(2, "0")}
       </p>
       <div className="card">
         <div className="card-item">
@@ -51,6 +53,7 @@ function ExchangeTab() {
             className="amount"
             type="text"
             placeholder="amount"
+            // value={source}
             value={NumberBeautify(source)}
             onChange={(e) => setSource(e.target.value)}
           />
