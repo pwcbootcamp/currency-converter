@@ -1,0 +1,46 @@
+.converter{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.appname{
+    font-size: 30px;
+    height: 10vh;
+    width: 100%;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result{
+    font-size: 30px;
+    margin-top: 50px;
+}
+.cover{
+    height: 80vh;
+    width: 50vw;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.group{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+}
+.textInput {
+    padding: 10px;
+    background-color: bisque;
+}
+
+.selector{
+    padding: 20px;
+}
