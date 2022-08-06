@@ -1,42 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;1,100;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,500&family=Uchen&display=swap');
 
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #254da5;
   height: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
-* {
-    font-family: 'DM Sans', sans-serif;
+*{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 .App-logo {
-  height: 20px;
+  height: 30px;
   vertical-align: middle;
   pointer-events: none;
+  background-color: #000;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.CurrencyTab {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-  width: 1000px;
-  height: 500px;
-  border-radius: 12px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.363);
-  margin: auto;
-  background: linear-gradient(180deg, rgb(12, 170, 246) 0%, 25.0494%, rgb(28, 139, 234) 50.0988%, 75.0494%, rgb(49, 100, 219) 100%);
-    background-image: linear-gradient(180deg, rgb(12, 170, 246) 0%, 25.0494%, rgb(28, 139, 234) 50.0988%, 75.0494%, rgb(49, 100, 219) 100%);
 }
 
 .App-header {
@@ -63,16 +49,31 @@
   }
 }
 
+
+.CurrencyTab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+  width: 1000px;
+  height: 500px;
+  border-radius: 12px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.363);
+  margin: auto;
+  background: linear-gradient(180deg, rgb(204, 222, 230) 0%, 25.0494%, rgb(207, 217, 226) 50.0988%, 75.0494%, rgb(235, 236, 239) 100%);
+    background-image: linear-gradient(180deg, rgb(217, 229, 235) 0%, 25.0494%, rgb(230, 234, 237) 50.0988%, 75.0494%, rgb(232, 235, 244) 100%);
+}
+
 select {
   border: none;
   background-color: transparent;
-  color: white;
+  color: #000;
   width: 200px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #000;
   padding-bottom: 5px;
 }
 
-select>option{
+select>option {
   color: black;
   padding: 10px;
   border-bottom: 1px solid black;  
@@ -84,7 +85,7 @@ h3 {
 }
 
 .timeline {
-  color: #92BEF2;
+  color: #000;
   text-align: right;
   padding: 20px;
   font-style: italic;
@@ -96,18 +97,18 @@ h3 {
   justify-content: space-evenly;
 }
 
-.card-item > p{
+.card-item > p {
   text-align: left;
   font-weight: 400;
   font-size: 12px;
-  color: #92BEF2;
+  color: #000;
 }
 
 input {
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #000;
   background-color: transparent;
-  color: white;
+  color: #000;
   font-size: 24px;
   max-width: 150px;
 }

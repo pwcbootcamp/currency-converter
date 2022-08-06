@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import NumberBeautify from "js-number-beautifier";
+import { useEffect, useState } from "react";
 import SelectCurrency from "./SelectCurrency";
 import logo from "../logo1.png";
 
@@ -8,7 +8,7 @@ function CurrencyTab() {
   const [currency, setCurrency] = useState("USD");
   const [source, setSource] = useState("10");
   const [rates, setRates] = useState("");
-  const [xrates, setXrates] = useState(1000);
+  const [xrates, setXrates] = useState(1000.0);
   const [timeline, setTimeline] = useState("");
 
   useEffect(() => {
